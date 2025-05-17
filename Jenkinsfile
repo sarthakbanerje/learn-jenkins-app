@@ -49,7 +49,7 @@ pipeline {
                 echo 'Deploy steps'
                 sh '''
                     npm install netlify-cli
-                    ./build/node_modules/.bin/netlify --version
+                    ./node_modules/netlify-cli --version
                 '''
             }
         }
