@@ -62,12 +62,11 @@ pipeline {
                 '''
             }
         }
-        stage('Manual Approval') {
+        stage('Approval') {
             steps {
                 echo 'Manual Approval Required'
-                //input message: '', ok: 'Yes, go ahead and DEPLOY'
                 timeout(5) {
-                    input message: '', ok: 'Yes, go ahead and DEPLOY'
+                    input message: '', ok: 'Yes, I am sure'
                 }
             }
         }
