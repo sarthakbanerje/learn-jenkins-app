@@ -62,7 +62,15 @@ pipeline {
                 '''
             }
         }
-
+        stage('Manual Approval') {
+            steps {
+                echo 'Manual Approval Required'
+                //input message: '', ok: 'Yes, go ahead and DEPLOY'
+                timeout(5) {
+                    input message: '', ok: 'Yes, go ahead and DEPLOY'
+                }
+            }
+        }
         stage('Deploy Prod') {
             agent {
                 docker {
